@@ -134,7 +134,9 @@ Se deberán de realizar algunos pasos previos.
   ```sh
    src\resources\postman
    ```
-   con la aplicación POSTMAN y ejecutar el LOGIN
+   con la aplicación POSTMAN y ejecutar el LOGIN.
+
+7. Ejecutar el SP ResetAll, para obtener data instantanea para poder probar.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
