@@ -11,7 +11,7 @@
 <br/>
 <div align="center">
   <a href="https://github.com/alessandrochipulina/boutique/tree/main">
-    <img src="image/logo.png" alt="Logo" width="80%" height="80%">
+    <img src="image/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BOUTIQUE XYZ</h3>
