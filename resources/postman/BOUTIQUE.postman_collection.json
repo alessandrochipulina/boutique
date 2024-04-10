@@ -1,0 +1,1201 @@
+{
+	"info": {
+		"_postman_id": "ced906d0-f599-419f-b19b-b93a0ba206b0",
+		"name": "BOUTIQUE",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5709740"
+	},
+	"item": [
+		{
+			"name": "USUARIO LOGIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/usuario/login?codigo=XYZ0006&pwd=123",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"usuario",
+						"login"
+					],
+					"query": [
+						{
+							"key": "codigo",
+							"value": "XYZ0006"
+						},
+						{
+							"key": "pwd",
+							"value": "123"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "USUARIO LOGIN",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/usuario/login?codigo=XYZ0006&pwd=123",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"usuario",
+								"login"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "XYZ0006"
+								},
+								{
+									"key": "pwd",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 10:04:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_7e7c604d-e012-459b-b538-e6b777d6d6c2"
+						}
+					],
+					"cookie": [],
+					"body": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIxMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE3MTUzMzU0NDEsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjYxOTI1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NjE5MjUifQ.fGQ4wTSc6IhIzrOGnPJripna7iaQHqVn_DTCI994cnw"
+				}
+			]
+		},
+		{
+			"name": "USUARIO LISTAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/usuario/listar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"usuario",
+						"listar"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "USUARIO LISTAR",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/usuario/listar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"usuario",
+								"listar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 07:57:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_34f257b9-ed62-416c-a253-a625bd281f40"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"usuario\": \"XYZ0001\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR JUNIOR\",\n        \"nombre\": \"Juan Perez\",\n        \"correo\": \"jperez@boutiquexyz.com\",\n        \"telefono\": \"977173845\"\n    },\n    {\n        \"usuario\": \"XYZ0002\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR JUNIOR\",\n        \"nombre\": \"Maria Gomez\",\n        \"correo\": \"mgomez@boutiquexyz.com\",\n        \"telefono\": \"976113325\"\n    },\n    {\n        \"usuario\": \"XYZ0003\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR JUNIOR\",\n        \"nombre\": \"Luis Acosta\",\n        \"correo\": \"lacosta@boutiquexyz.com\",\n        \"telefono\": \"988453662\"\n    },\n    {\n        \"usuario\": \"XYZ0004\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR SENIOR\",\n        \"nombre\": \"Jaime Redondo\",\n        \"correo\": \"jredondo@boutiquexyz.com\",\n        \"telefono\": \"955463318\"\n    },\n    {\n        \"usuario\": \"XYZ0005\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR SENIOR\",\n        \"nombre\": \"Maya Potter\",\n        \"correo\": \"mpotter@boutiquexyz.com\",\n        \"telefono\": \"988231109\"\n    },\n    {\n        \"usuario\": \"XYZ0006\",\n        \"rol\": \"ENCARGADO\",\n        \"puesto\": \"ADMINISTRADOR\",\n        \"nombre\": \"Lucia Galois\",\n        \"correo\": \"lgalois@boutiquexyz.com\",\n        \"telefono\": \"976224317\"\n    },\n    {\n        \"usuario\": \"XYZ0007\",\n        \"rol\": \"ENCARGADO\",\n        \"puesto\": \"ADMINISTRADOR\",\n        \"nombre\": \"Alessandro Altobelli\",\n        \"correo\": \"aaltobelli@boutiquexyz.com\",\n        \"telefono\": \"989341234\"\n    },\n    {\n        \"usuario\": \"XYZ0008\",\n        \"rol\": \"DELIVERY\",\n        \"puesto\": \"PROGRAMADOR DELIVERY\",\n        \"nombre\": \"Luciana Volta\",\n        \"correo\": \"lvolta@boutiquexyz.com\",\n        \"telefono\": \"997354936\"\n    },\n    {\n        \"usuario\": \"XYZ0009\",\n        \"rol\": \"DELIVERY\",\n        \"puesto\": \"PROGRAMADOR DELIVERY\",\n        \"nombre\": \"Ricardo Flores\",\n        \"correo\": \"rflores@boutiquexyz.com\",\n        \"telefono\": \"978665342\"\n    },\n    {\n        \"usuario\": \"XYZ0010\",\n        \"rol\": \"REPARTIDOR\",\n        \"puesto\": \"REPARTIDOR JUNIOR\",\n        \"nombre\": \"Enrique Borrego\",\n        \"correo\": \"eborrego@boutiquexyz.com\",\n        \"telefono\": \"988784532\"\n    },\n    {\n        \"usuario\": \"XYZ0011\",\n        \"rol\": \"REPARTIDOR\",\n        \"puesto\": \"REPARTIDOR JUNIOR\",\n        \"nombre\": \"Julio Guerrero\",\n        \"correo\": \"jguerrero@boutiquexyz.com\",\n        \"telefono\": \"977192645\"\n    },\n    {\n        \"usuario\": \"XYZ0012\",\n        \"rol\": \"REPARTIDOR\",\n        \"puesto\": \"REPARTIDOR JUNIOR\",\n        \"nombre\": \"Andrea Riso\",\n        \"correo\": \"ariso@boutiquexyz.com\",\n        \"telefono\": \"988663735\"\n    },\n    {\n        \"usuario\": \"XYZ0013\",\n        \"rol\": \"REPARTIDOR\",\n        \"puesto\": \"REPARTIDOR SENIOR\",\n        \"nombre\": \"Oswaldo Mercado\",\n        \"correo\": \"omercado@boutiquexyz.com\",\n        \"telefono\": \"976561488\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "PRODUCTO LISTAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/producto/listar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"producto",
+						"listar"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "USUARIO LISTAR",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/usuario/listar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"usuario",
+								"listar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 07:57:38 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_34f257b9-ed62-416c-a253-a625bd281f40"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"usuario\": \"XYZ0001\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR JUNIOR\",\n        \"nombre\": \"Juan Perez\",\n        \"correo\": \"jperez@boutiquexyz.com\",\n        \"telefono\": \"977173845\"\n    },\n    {\n        \"usuario\": \"XYZ0002\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR JUNIOR\",\n        \"nombre\": \"Maria Gomez\",\n        \"correo\": \"mgomez@boutiquexyz.com\",\n        \"telefono\": \"976113325\"\n    },\n    {\n        \"usuario\": \"XYZ0003\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR JUNIOR\",\n        \"nombre\": \"Luis Acosta\",\n        \"correo\": \"lacosta@boutiquexyz.com\",\n        \"telefono\": \"988453662\"\n    },\n    {\n        \"usuario\": \"XYZ0004\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR SENIOR\",\n        \"nombre\": \"Jaime Redondo\",\n        \"correo\": \"jredondo@boutiquexyz.com\",\n        \"telefono\": \"955463318\"\n    },\n    {\n        \"usuario\": \"XYZ0005\",\n        \"rol\": \"VENDEDOR\",\n        \"puesto\": \"VENDEDOR SENIOR\",\n        \"nombre\": \"Maya Potter\",\n        \"correo\": \"mpotter@boutiquexyz.com\",\n        \"telefono\": \"988231109\"\n    },\n    {\n        \"usuario\": \"XYZ0006\",\n        \"rol\": \"ENCARGADO\",\n        \"puesto\": \"ADMINISTRADOR\",\n        \"nombre\": \"Lucia Galois\",\n        \"correo\": \"lgalois@boutiquexyz.com\",\n        \"telefono\": \"976224317\"\n    },\n    {\n        \"usuario\": \"XYZ0007\",\n        \"rol\": \"ENCARGADO\",\n        \"puesto\": \"ADMINISTRADOR\",\n        \"nombre\": \"Alessandro Altobelli\",\n        \"correo\": \"aaltobelli@boutiquexyz.com\",\n        \"telefono\": \"989341234\"\n    },\n    {\n        \"usuario\": \"XYZ0008\",\n        \"rol\": \"DELIVERY\",\n        \"puesto\": \"PROGRAMADOR DELIVERY\",\n        \"nombre\": \"Luciana Volta\",\n        \"correo\": \"lvolta@boutiquexyz.com\",\n        \"telefono\": \"997354936\"\n    },\n    {\n        \"usuario\": \"XYZ0009\",\n        \"rol\": \"DELIVERY\",\n        \"puesto\": \"PROGRAMADOR DELIVERY\",\n        \"nombre\": \"Ricardo Flores\",\n        \"correo\": \"rflores@boutiquexyz.com\",\n        \"telefono\": \"978665342\"\n    },\n    {\n        \"usuario\": \"XYZ0010\",\n        \"rol\": \"REPARTIDOR\",\n        \"puesto\": \"REPARTIDOR JUNIOR\",\n        \"nombre\": \"Enrique Borrego\",\n        \"correo\": \"eborrego@boutiquexyz.com\",\n        \"telefono\": \"988784532\"\n    },\n    {\n        \"usuario\": \"XYZ0011\",\n        \"rol\": \"REPARTIDOR\",\n        \"puesto\": \"REPARTIDOR JUNIOR\",\n        \"nombre\": \"Julio Guerrero\",\n        \"correo\": \"jguerrero@boutiquexyz.com\",\n        \"telefono\": \"977192645\"\n    },\n    {\n        \"usuario\": \"XYZ0012\",\n        \"rol\": \"REPARTIDOR\",\n        \"puesto\": \"REPARTIDOR JUNIOR\",\n        \"nombre\": \"Andrea Riso\",\n        \"correo\": \"ariso@boutiquexyz.com\",\n        \"telefono\": \"988663735\"\n    },\n    {\n        \"usuario\": \"XYZ0013\",\n        \"rol\": \"REPARTIDOR\",\n        \"puesto\": \"REPARTIDOR SENIOR\",\n        \"nombre\": \"Oswaldo Mercado\",\n        \"correo\": \"omercado@boutiquexyz.com\",\n        \"telefono\": \"976561488\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "USUARIO BUSCAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/usuario/buscar?texto=ALE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"usuario",
+						"buscar"
+					],
+					"query": [
+						{
+							"key": "texto",
+							"value": "ALE"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "USUARIO BUSCAR",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/usuario/buscar?texto=ALE",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"usuario",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "texto",
+									"value": "ALE"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 08:00:51 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_6541aabb-5fbb-4a81-915a-d1d095c265d9"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"usuario\": \"XYZ0007\",\n        \"rol\": \"ENCARGADO\",\n        \"puesto\": \"ADMINISTRADOR\",\n        \"nombre\": \"Alessandro Altobelli\",\n        \"correo\": \"aaltobelli@boutiquexyz.com\",\n        \"telefono\": \"989341234\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "PEDIDO LISTAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/pedido/listar",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"pedido",
+						"listar"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "PEDIDO LISTAR",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/pedido/listar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pedido",
+								"listar"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 07:58:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_4b85736e-5263-4cb0-b9af-85ba1326c64e"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id_pedido\": 6,\n        \"sku\": \"SKU0006005\",\n        \"nombre\": \"CALVIN KLEIN CK ONE 200\",\n        \"precioventa\": 130,\n        \"cantidad\": 2,\n        \"estado\": \"ENTREGADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T02:02:53.213\"\n    },\n    {\n        \"id_pedido\": 6,\n        \"sku\": \"SKU0007091\",\n        \"nombre\": \"GUESS BELLA VITA 100\",\n        \"precioventa\": 360,\n        \"cantidad\": 1,\n        \"estado\": \"ENTREGADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T02:02:53.213\"\n    },\n    {\n        \"id_pedido\": 7,\n        \"sku\": \"SKU0007565\",\n        \"nombre\": \"HOLISTER RUSH FOR HER 100\",\n        \"precioventa\": 280,\n        \"cantidad\": 3,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 7,\n        \"sku\": \"SKU0007566\",\n        \"nombre\": \"HOLISTER RUSH FOR HER 180\",\n        \"precioventa\": 380,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 8,\n        \"sku\": \"SKU0007565\",\n        \"nombre\": \"HOLISTER RUSH FOR HER 100\",\n        \"precioventa\": 280,\n        \"cantidad\": 2,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 8,\n        \"sku\": \"SKU0006015\",\n        \"nombre\": \"CHANEL BLEU DE CHANEL 150\",\n        \"precioventa\": 150,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 9,\n        \"sku\": \"SKU0006001\",\n        \"nombre\": \"DIOR SAUVAGE 300\",\n        \"precioventa\": 200,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 10,\n        \"sku\": \"SKU0006034\",\n        \"nombre\": \"HUGO BOSS EAU DE TOILETTE 110\",\n        \"precioventa\": 170,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 11,\n        \"sku\": \"SKU0006006\",\n        \"nombre\": \"CALVIN KLEIN CK ONE 150\",\n        \"precioventa\": 100,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 12,\n        \"sku\": \"SKU0006023\",\n        \"nombre\": \"YVES SAINT LAURENT EAU DE TOILETTE 90\",\n        \"precioventa\": 250,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 13,\n        \"sku\": \"SKU0006005\",\n        \"nombre\": \"CALVIN KLEIN CK ONE 200\",\n        \"precioventa\": 130,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 14,\n        \"sku\": \"SKU0006001\",\n        \"nombre\": \"DIOR SAUVAGE 300\",\n        \"precioventa\": 200,\n        \"cantidad\": 2,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 15,\n        \"sku\": \"SKU0006450\",\n        \"nombre\": \"CAROLINA HERRERA EAU DE PARFUM 80\",\n        \"precioventa\": 280,\n        \"cantidad\": 3,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 1003,\n        \"sku\": \"SKU0006034\",\n        \"nombre\": \"HUGO BOSS EAU DE TOILETTE 110\",\n        \"precioventa\": 199,\n        \"cantidad\": 2,\n        \"estado\": \"CREADO\",\n        \"usuario\": \"XYZ0004\",\n        \"fecha\": \"2024-04-10T02:12:01.167\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "PEDIDO BUSCAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/v1/pedido/buscar?texto=TAB",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"pedido",
+						"buscar"
+					],
+					"query": [
+						{
+							"key": "texto",
+							"value": "TAB"
+						}
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": [
+				{
+					"name": "PEDIDO BUSCAR",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/pedido/buscar?texto=TAB",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pedido",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "texto",
+									"value": "TAB"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 07:59:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_39782d57-54c9-4895-8517-fba9916ae1b2"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id_pedido\": 9,\n        \"sku\": \"SKU0006001\",\n        \"nombre\": \"DIOR SAUVAGE 300\",\n        \"precioventa\": 200,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 12,\n        \"sku\": \"SKU0006023\",\n        \"nombre\": \"YVES SAINT LAURENT EAU DE TOILETTE 90\",\n        \"precioventa\": 250,\n        \"cantidad\": 1,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    },\n    {\n        \"id_pedido\": 14,\n        \"sku\": \"SKU0006001\",\n        \"nombre\": \"DIOR SAUVAGE 300\",\n        \"precioventa\": 200,\n        \"cantidad\": 2,\n        \"estado\": \"RECEPCIONADO\",\n        \"usuario\": \"XYZ0003\",\n        \"fecha\": \"2024-04-10T01:53:27.823\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "PEDIDO RECUPERAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "id_pedido",
+						"value": "1003",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/pedido/recuperar?id_pedido=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"pedido",
+						"recuperar"
+					],
+					"query": [
+						{
+							"key": "id_pedido",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "PEDIDO RECUPERAR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "id_pedido",
+								"value": "1003",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/pedido/recuperar?id_pedido=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pedido",
+								"recuperar"
+							],
+							"query": [
+								{
+									"key": "id_pedido",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 08:28:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_0731b659-5b0b-40fd-a94a-68430602d4bb"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "PEDIDO AGREGAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/pedido/agregarproducto?id_pedido=1003&sku=SKU0006001&precio=150&cantidad=3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"pedido",
+						"agregarproducto"
+					],
+					"query": [
+						{
+							"key": "id_pedido",
+							"value": "1003"
+						},
+						{
+							"key": "sku",
+							"value": "SKU0006001"
+						},
+						{
+							"key": "precio",
+							"value": "150"
+						},
+						{
+							"key": "cantidad",
+							"value": "3"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "PEDIDO AGREGAR",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/pedido/agregarproducto?id_pedido=1003&sku=SKU0006001&precio=150&cantidad=3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pedido",
+								"agregarproducto"
+							],
+							"query": [
+								{
+									"key": "id_pedido",
+									"value": "1003"
+								},
+								{
+									"key": "sku",
+									"value": "SKU0006001"
+								},
+								{
+									"key": "precio",
+									"value": "150"
+								},
+								{
+									"key": "cantidad",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 08:23:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_72811e6b-134e-4956-be40-92059fe28432"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 2007\n}"
+				}
+			]
+		},
+		{
+			"name": "PEDIDO ATENDER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/pedido/atender?id_pedido=1003&codigo_usuario=XYZ0006",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"pedido",
+						"atender"
+					],
+					"query": [
+						{
+							"key": "id_pedido",
+							"value": "1003"
+						},
+						{
+							"key": "codigo_usuario",
+							"value": "XYZ0006"
+						}
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "PEDIDO ATENDER",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/pedido/atender?id_pedido=1003&codigo_usuario=XYZ0006",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pedido",
+								"atender"
+							],
+							"query": [
+								{
+									"key": "id_pedido",
+									"value": "1003"
+								},
+								{
+									"key": "codigo_usuario",
+									"value": "XYZ0006"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 08:28:36 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_779f3a92-2432-4ffe-a9bc-a809a715965d"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "PEDIDO CREAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/pedido/crear?codigo_usuario=XYZ0006",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"pedido",
+						"crear"
+					],
+					"query": [
+						{
+							"key": "codigo_usuario",
+							"value": "XYZ0006"
+						}
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": [
+				{
+					"name": "PEDIDO CREAR",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/pedido/crear?codigo_usuario=XYZ0006",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pedido",
+								"crear"
+							],
+							"query": [
+								{
+									"key": "codigo_usuario",
+									"value": "XYZ0006"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 08:28:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_c8dba297-c8df-4810-874c-2271ba8d4e1e"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 1004\n}"
+				}
+			]
+		},
+		{
+			"name": "PEDIDO CANCELAR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/pedido/cancelar?id_pedido=1003",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"pedido",
+						"cancelar"
+					],
+					"query": [
+						{
+							"key": "id_pedido",
+							"value": "1003"
+						}
+					]
+				},
+				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+			},
+			"response": [
+				{
+					"name": "PEDIDO CANCELAR",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/pedido/cancelar?id_pedido=1003",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"pedido",
+								"cancelar"
+							],
+							"query": [
+								{
+									"key": "id_pedido",
+									"value": "1003"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 Apr 2024 08:29:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "x-boutique-request-id",
+							"value": "_19aa3335-7500-4f6b-b0a6-d895f184dd82"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": 1\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIxMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE3MTUzMjA5ODcsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjYxOTI1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NjE5MjUifQ.7sh2GL5EwSdDQW92SfB0qLOqbK4pa7D5-_6LVnJAUF0",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://localhost:61925"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIxMCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE3MTUzMjA5ODcsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjYxOTI1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NjE5MjUifQ.7sh2GL5EwSdDQW92SfB0qLOqbK4pa7D5-_6LVnJAUF0",
+			"type": "string"
+		}
+	]
+}
