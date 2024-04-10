@@ -2,13 +2,11 @@
 using Common.Constants;
 using Common.Http;
 using Common.Logging;
-using Common.Security.Meta;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Serilog.Events;
 using System;
 using System.IO;
-using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 //https://dzone.com/articles/system-memory-health-check-for-aspnet-core
@@ -19,7 +17,6 @@ namespace Common.Controllers.Meta
     public class LogManagement : ControllerBase
     {
         private readonly HttpUtil httpUtil = new HttpUtil();
-        private readonly MetaSecurityUtil metaSecurityUtil = new MetaSecurityUtil();
         private readonly CustomLoggingLevelSwitchers customLoggingLevelSwitchers;
         private readonly LoggerUtil loggerUtil = new LoggerUtil();
         private readonly IConfiguration configuration;
@@ -89,13 +86,7 @@ namespace Common.Controllers.Meta
 
         [HttpGet("view")]
         public string Log(string apiKey)
-        {
-            
-            if (!metaSecurityUtil.ShouldAccess(apiKey, Request.Headers, this.apiGlobalConfiguration.GetMetaApiKey()))
-            {
-                return "Invalid meta api key";
-            }
-
+        {          
             if (String.IsNullOrWhiteSpace(this.apiGlobalConfiguration.GetMetaLogPath()))
             {
                 return "Log path was not configured";
@@ -141,11 +132,6 @@ namespace Common.Controllers.Meta
         [HttpGet("truncate")]
         public IActionResult LogTruncate(string apiKey)
         {
-            if (!metaSecurityUtil.ShouldAccess(apiKey, Request.Headers, this.apiGlobalConfiguration.GetMetaApiKey()))
-            {
-                return Ok(httpUtil.CreateHttpResponse(401, "Invalid meta api key", null));
-            }
-
             if (String.IsNullOrWhiteSpace(this.apiGlobalConfiguration.GetMetaLogPath()))
             {
                 return Ok(httpUtil.CreateHttpResponse(500, "Log was not configured", null));

@@ -51,7 +51,6 @@ namespace Api
             services.AddSingleton<DatabaseManager>();
             
             services.AddTransient<HttpMiddlewareLogConfigurer>();
-            services.AddTransient<HttpMiddlewareAuthConfigurer>();
 
             services.AddControllers();
 
