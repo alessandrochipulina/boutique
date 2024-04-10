@@ -11,7 +11,7 @@
 <br/>
 <div align="center">
   <a href="https://github.com/alessandrochipulina/boutique/tree/main">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="image/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BOUTIQUE XYZ</h3>
@@ -60,7 +60,7 @@
 
 Una forma común de manejar la seguridad en tus servicios, es mediante la seguridad basada en tokens. En el cual después de que el usuario inicia sesión el servidor regresa una cadena codificada con los datos que identifican al usuario(claims), este token se debe enviar en cada petición a los servicios rest, el servidor valida el token si es correcto obtiene los datos del usuario y si el usuario tiene el permiso o el rol correcto muestra la información, una explicación de forma gráfica es la siguiente:
 
-[![Screen 1][screen1]]
+![Screen 1][screen1]
 
 * El usuario inicia sesión ya sea en una aplicación móvil o en navegador. Internamente se envía una petición POST con el usuario y contraseña del usuario.
 * El servidor valida el usuario y contraseña enviados y genera un token, el cual es básicamente una cadena codificada donde agrega información como el Id del usuario, los roles que tiene el usuario, y el tiempo en el cual es token es válido por ejemplo 1 hora, 2 horas, 1 día, una vez caducado el token el usuario debe volver a iniciar sesión o pedir una renovación del token.
@@ -101,7 +101,7 @@ Se deberán de realizar algunos pasos previos.
 1. Se debe de contar con el acceso a un servidor de base de datos MS SQL Server.
 2. Contar con Visual Studio 2022 con NET 7.0 instalado.
 
-### Installation
+### Instalación
 
 1. Clonar este repositorio
    ```sh
@@ -112,10 +112,23 @@ Se deberán de realizar algunos pasos previos.
    src\resources\sql
    ```
 4. Establecer las siguientes variables de entorno
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   ```cs
+   ASPNETCORE_ENVIRONMENT = 'Development'
+   META_APP_NAME = 'Boutique'
+   META_LOG_PATH = 'D:\Code\Boutique.log'
+   META_ENV = 'Development'
+   META_API_KEY = '123'
+   META_LOG_BASE_LEVEL = 'error'
+   META_LOG_MICROSOFT_LEVEL = 'error'
+   SQL_HOST = 'localhost'
+   SQL_PORT = '1433'
+   SQL_USER = 'sa'
+   SQL_PASSWORD = 'A$1234aaaa'
+   SQL_DATABASENAME = 'BoutiqueXYZ'
+   TOKENS_KEY = 'QWERTYUIOPASDFGHJKLZXCVBNMQWERTY'
+   TOKENS_ISSUER = 'https://localhost:61925'
    ```
-5. Correr la aplicación
+5. Correr la aplicación. Acceder a la ruta https://localhost:61925/swagger/index.html
    
 6. Abrir la colección de la carpeta
   ```sh
@@ -130,11 +143,11 @@ Se deberán de realizar algunos pasos previos.
 
 Se muestran pantallas de su uso:
 
-[![Screen 2][screen2]]
+![Screen 2][screen2]
 
-[![Screen 3][screen3]]
+![Screen 3][screen3]
 
-[![Screen 4][screen4]]
+![Screen 4][screen4]
 
 _For more examples, please refer to the [Documentation](https://github.com/alessandrochipulina/boutique)_
 
@@ -216,10 +229,10 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]:https://github.com/alessandrochipulina/boutique/tree/main
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/chipulina/
-[screen1]: images/screen1.png
-[screen2]: images/screen2.png
-[screen3]: images/screen3.png
-[screen4]: images/screen4.png
+[screen1]: image/screen1.png
+[screen2]: image/screen2.png
+[screen3]: image/screen3.png
+[screen4]: image/screen4.png
 [Next.js]: https://img.shields.io/badge/-.NET%207.0-blueviolet
 [Next-url]: https://dotnet.microsoft.com/es-es/download/dotnet/7.0
 [React.js]: https://img.shields.io/badge/-SWAGGER-green
