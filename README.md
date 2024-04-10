@@ -1,13 +1,11 @@
 <a name="readme-top"></a>
 
-<div align="center">
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-</div>
 
 <!-- PROJECT LOGO -->
 <br/>
@@ -64,19 +62,26 @@ Una forma común de manejar la seguridad en tus servicios, es mediante la seguri
 
 [![Screen 1][screen1]]
 
-* 1. El usuario inicia sesión ya sea en una aplicación móvil o en navegador. Internamente se envía una petición POST con el usuario y contraseña del usuario.
-* 2. El servidor valida el usuario y contraseña enviados y genera un token, el cual es básicamente una cadena codificada donde agrega información como el Id del usuario, los roles que tiene el usuario, y el tiempo en el cual es token es válido por ejemplo 1 hora, 2 horas, 1 día, una vez caducado el token el usuario debe volver a iniciar sesión o pedir una renovación del token.
-* 3. El navegador o la aplicación recibe el token y lo guarda. Se puede guardar el token en el local storage,cookies seguras, de la página si es una aplicación web o en los datos tu aplicación móvil. Por motivos de seguridad si guardas el token en el local storage debes agregar otra validación como por ejemplo la ip de la cual el usuario realizó el login, para que si un hacker obtiene el token e intenta acceder desde otra ciudad o país notificar al usuario para cancelar el token. :smile:
-* 4. El usuario consulta alguna información del sistema, como por ejemplo la lista de clientes. En el servicio GET con la petición para la lista de clientes, en el header se envia el token que el servidor regreso en el paso 2.
-* 5. El servidor válida el token si es válido y el usuario tiene permiso para consultar la información regresa la información, si no regresa un código de error (401) No autorizado.
+* El usuario inicia sesión ya sea en una aplicación móvil o en navegador. Internamente se envía una petición POST con el usuario y contraseña del usuario.
+* El servidor valida el usuario y contraseña enviados y genera un token, el cual es básicamente una cadena codificada donde agrega información como el Id del usuario, los roles que tiene el usuario, y el tiempo en el cual es token es válido por ejemplo 1 hora, 2 horas, 1 día, una vez caducado el token el usuario debe volver a iniciar sesión o pedir una renovación del token.
+* El navegador o la aplicación recibe el token y lo guarda. Se puede guardar el token en el local storage,cookies seguras, de la página si es una aplicación web o en los datos tu aplicación móvil. Por motivos de seguridad si guardas el token en el local storage debes agregar otra validación como por ejemplo la ip de la cual el usuario realizó el login, para que si un hacker obtiene el token e intenta acceder desde otra ciudad o país notificar al usuario para cancelar el token. :smile:
+* El usuario consulta alguna información del sistema, como por ejemplo la lista de clientes. En el servicio GET con la petición para la lista de clientes, en el header se envia el token que el servidor regreso en el paso 2.
+* El servidor válida el token si es válido y el usuario tiene permiso para consultar la información regresa la información, si no regresa un código de error (401) No autorizado.
 
 Un Json Web Token es una cadena codificada en base64 formada por 3 partes las cuales están separadas por un punto.
 
-Use the `BLANK_README.md` to get started.
+* Header: Indica el algoritmo y tipo de token
+* Payload: Datos del usuario, caducidad del token, roles del usuario
+* Signature: Incluye una llave secreta para validar el token
+
+Para poder generar los tokens necesitamos:
+* LLave secreta: Es una llave que permite encriptar/desencriptar la información del token
+* Issuer: Es quien genera el token, por lo general es la URL del servidor que contiene los servicios
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+<!-- BUILD WITH -->
+### Construido con
 
 Se muestran las herramientas usadas para la creación de este proyecto:
 
@@ -89,66 +94,65 @@ Se muestran las herramientas usadas para la creación de este proyecto:
 <!-- GETTING STARTED -->
 ## Antes de comenzar
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Se deberán de realizar algunos pasos previos.
 
-### Prerequisites
+### Prerequisitos
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+1. Se debe de contar con el acceso a un servidor de base de datos MS SQL Server.
+2. Contar con Visual Studio 2022 con NET 7.0 instalado.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clonar este repositorio
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/alessandrochipulina/boutique.git
    ```
-3. Install NPM packages
+3. Instalar la base de datos BoutiqueXYZ desde los archivos de la ruta
    ```sh
-   npm install
+   src\resources\sql
    ```
-4. Enter your API in `config.js`
+4. Establecer las siguientes variables de entorno
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
+5. Correr la aplicación
+   
+6. Abrir la colección de la carpeta
+  ```sh
+   src\resources\postman
+   ```
+   con la aplicación POSTMAN y ejecutar el LOGIN
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Se muestran pantallas de su uso:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+[![Screen 2][screen2]]
+
+[![Screen 3][screen3]]
+
+[![Screen 4][screen4]]
+
+_For more examples, please refer to the [Documentation](https://github.com/alessandrochipulina/boutique)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- ROADMAP -->
-## Roadmap
+## Hoja de Ruta
 
-- [x] Add Changelog
+- [x] Agregar hoja de cambios
 - [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
+- [ ] Agregar ejemplos adicionales
+- [ ] Soporte Multi Lenguaje
     - [ ] Chinese
-    - [ ] Spanish
+    - [ ] English
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+Vea la lista [open issues](https://github.com/alessandrochipulina/boutique) para una lista completa de propuestas recomendadas.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -166,8 +170,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
 ## License
 
@@ -175,21 +177,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
-## Contact
+## Contacto
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Alessandro Chipulina - [@your_twitter](https://twitter.com/achipulina) - alessandro.chipulina@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/alessandrochipulina/boutique](https://github.com/alessandrochipulina/boutique)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## Agradecimientos
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
@@ -203,8 +201,6 @@ Use this space to list resources you find helpful and would like to give credit 
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
