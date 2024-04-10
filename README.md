@@ -11,7 +11,7 @@
 <br/>
 <div align="center">
   <a href="https://github.com/alessandrochipulina/boutique/tree/main">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="image/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BOUTIQUE XYZ</h3>
@@ -115,7 +115,7 @@ Se deberán de realizar algunos pasos previos.
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
-5. Correr la aplicación
+5. Correr la aplicación. Acceder a la ruta https://localhost:61925/swagger/index.html
    
 6. Abrir la colección de la carpeta
   ```sh
@@ -216,10 +216,10 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]:https://github.com/alessandrochipulina/boutique/tree/main
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/chipulina/
-[screen1]: images/screen1.png
-[screen2]: images/screen2.png
-[screen3]: images/screen3.png
-[screen4]: images/screen4.png
+[screen1]: image/screen1.png
+[screen2]: image/screen2.png
+[screen3]: image/screen3.png
+[screen4]: image/screen4.png
 [Next.js]: https://img.shields.io/badge/-.NET%207.0-blueviolet
 [Next-url]: https://dotnet.microsoft.com/es-es/download/dotnet/7.0
 [React.js]: https://img.shields.io/badge/-SWAGGER-green
